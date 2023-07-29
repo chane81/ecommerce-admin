@@ -7,7 +7,7 @@
 - tailwindcss
 - typescript 5
 - clerk.com (인증관리 cloud)
-- prisma
+- prisma (orm)
 - planetscale (database) - 10GB 까지 무료
 
 ## Setup
