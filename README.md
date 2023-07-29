@@ -7,13 +7,18 @@
 - tailwindcss
 - typescript 5
 - clerk.com (인증관리 cloud)
+- prisma
+- planetscale (database) - 10GB 까지 무료
 
 ## Setup
 
 - base setup
 
   ```bash
+  # next.js app create
   $ npx create-next-app ecommerce-admin --typescript --tailwind --eslint
+
+  # shadcn-ui init
   $ npx shadcn-ui@latest init
 
   Which style would you like to use? > Default
@@ -41,6 +46,24 @@
   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
   ```
+- Prisma Setup
+
+  - Setup
+
+    ```bash
+    $ yarn add -D prisma
+    $ yarn add @prisma/client
+
+    # prisma init
+    $ npx prisma init
+    ```
+
+  - DB 스키마 생성
+    - prisma/schema.prisma 에서 스키마 작성후 터미널에서 아래 입력하여 생성
+    ```bash
+    $ npx prisma generate
+    $ npx prisma db push
+    ```
 
 ## 참고 문서
 
