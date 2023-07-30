@@ -2,6 +2,7 @@ import { auth } from '@clerk/nextjs';
 import { FC, ReactNode } from 'react';
 import { redirect } from 'next/navigation';
 import prismadb from '@/lib/prismadb';
+import Navbar from '@/components/navbar';
 
 interface IPropsDashboardLayout {
   children: ReactNode;
@@ -31,7 +32,7 @@ const DashboardLayout: FC<IPropsDashboardLayout> = async ({
 
   return (
     <>
-      <div>This will be a Navbar</div>
+      <Navbar />
       {children}
     </>
   );
