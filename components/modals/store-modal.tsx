@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name: z.string().min(1, { message: 'Name is required.' })
@@ -25,7 +26,12 @@ const formSchema = z.object({
 
 export const StoreModal: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const storeModal = useStoreModal();
+  const { isOpen, onClose, onOpen } = useStoreModal(state => ({
+    isOpen: state.isOpen,
+    onClose: state.onClose,
+    onOpen: state.onOpen
+  }));
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,10 +46,9 @@ export const StoreModal: React.FC = () => {
 
       const response = await axios.post('/api/stores', values);
 
-      console.log('data', response.data);
-      toast.success('Store created.');
+      // toast.success('Store created.');
+      window.location.assign(`/${response.data.id}`);
     } catch (error) {
-      console.log(error);
       toast.error('Something went wrong.');
     } finally {
       setIsLoading(false);
@@ -54,8 +59,8 @@ export const StoreModal: React.FC = () => {
     <Modal
       title='Create Store'
       description='Add a new store to manage products and categories'
-      isOpen={storeModal.isOpen}
-      onClose={storeModal.onClose}
+      isOpen={isOpen}
+      onClose={onClose}
     >
       <div>
         <div className='space-y-4 py-2 pb-4'>
@@ -82,7 +87,7 @@ export const StoreModal: React.FC = () => {
                 <Button
                   disabled={isLoading}
                   variant='outline'
-                  onClick={storeModal.onClose}
+                  onClick={onClose}
                 >
                   Cancel
                 </Button>
