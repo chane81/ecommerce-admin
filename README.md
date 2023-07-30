@@ -64,6 +64,12 @@
     $ npx prisma generate
     $ npx prisma db push
     ```
+  - prisma reset
+    ```bash
+    $ npx prisma migrate reset
+    $ npx prisma generate
+    $ npx prisma db push
+    ```
 
 ## 참고 문서
 
