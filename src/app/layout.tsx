@@ -1,9 +1,8 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { ClerkProvider } from '@clerk/nextjs';
-import { ModalProvider } from '@/src/providers/modal-provider';
-import prismadb from '@/src/lib/prismadb';
-import { ToasterProvider } from '@/src/providers/toast-provider';
+import { ModalProvider } from '@/providers/modal-provider';
+import { ToasterProvider } from '@/providers/toast-provider';
 
 const inter = Inter({ subsets: ['latin'] });
 

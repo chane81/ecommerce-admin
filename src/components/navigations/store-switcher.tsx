@@ -5,18 +5,18 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger
-} from '@/src/components/ui/popover';
+} from '@/components/ui/popover';
 import { Store } from '@prisma/client';
-import { useStoreModal } from '@/src/hooks/use-store-modal';
+import { useStoreModal } from '@/hooks/use-store-modal';
 import { useParams, useRouter } from 'next/navigation';
-import { Button } from '@/src/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Check,
   ChevronsUpDown,
   PlusCircle,
   Store as StoreIcon
 } from 'lucide-react';
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 import {
   Command,
   CommandEmpty,
@@ -25,7 +25,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator
-} from '@/src/components/ui/command';
+} from '@/components/ui/command';
 
 type TPropsPopoverTrigger = ComponentPropsWithoutRef<typeof PopoverTrigger>;
 

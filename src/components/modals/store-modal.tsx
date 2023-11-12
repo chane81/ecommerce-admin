@@ -1,7 +1,7 @@
 'use client';
 
-import { Modal } from '@/src/components/ui/modal';
-import { useStoreModal } from '@/src/hooks/use-store-modal';
+import { Modal } from '@/components/ui/modal';
+import { useStoreModal } from '@/hooks/use-store-modal';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,9 +12,9 @@ import {
   FormItem,
   FormLabel,
   FormMessage
-} from '@/src/components/ui/form';
-import { Input } from '@/src/components/ui/input';
-import { Button } from '@/src/components/ui/button';
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
